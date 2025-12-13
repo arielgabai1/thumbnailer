@@ -6,12 +6,6 @@ pipeline {
         maven 'Maven 3.6.2'
     }
     stages {
-        stage('checkout') {
-            steps {
-                checkout scm
-            }
-        }
-
         stage('build') {
             steps {
                 configFileProvider([configFile(fileId: 'artifactory-settings', variable: 'ARTIFACTORY_SETTINGS')]) {
