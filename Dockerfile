@@ -4,10 +4,7 @@ ENV TN_SIZE 150
 
 WORKDIR /app
 
-# Copy the application jar
 COPY target/thumbnailer.jar /app/thumbnailer.jar
-
-# Copy dependencies
 COPY target/lib /app/lib
 
 WORKDIR /pics
