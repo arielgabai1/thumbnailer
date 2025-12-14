@@ -10,7 +10,8 @@ pipeline {
             steps {
                 configFileProvider([configFile(fileId: 'artifactory-settings', variable: 'ARTIFACTORY_SETTINGS')]) {
 
-                    // builds the JAR and Docker image.
+                    // Builds the JAR and Docker image.
+                    // Lifecycle 'package' executes phases: clean -> validate -> compile -> test -> package
                     sh 'mvn clean package -s $ARTIFACTORY_SETTINGS -DskipTests'
                 }
             }
